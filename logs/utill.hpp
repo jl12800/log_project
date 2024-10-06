@@ -10,7 +10,7 @@ namespace jl12800
     namespace utill
     {
         /* 获取系统时间*/
-        class date
+        class DATE
         {
         public:
             static time_t now()
@@ -20,7 +20,7 @@ namespace jl12800
         };
 
         /* 文件相关操作接口-判断文件存在与否、文件路径、创建目录 */
-        class file
+        class FILE
         {
         public:
             static bool exists(const std::string &filename)
