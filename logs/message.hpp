@@ -6,10 +6,10 @@
 
 namespace jl12800
 {
-    class LOGMSG
+    class LOG_MSG
     {
     public:
-        LOGMSG(LOGLEVEL::value level, size_t line, const std::string file, const std::string logger, const std::string msg)
+        LOG_MSG(LOG_LEVEL::value level, size_t line, const std::string file, const std::string logger, const std::string msg)
             : _ctime(utill::DATE::now()),
               _level(level), _line(line),
               _tid(std::this_thread::get_id()),
@@ -18,7 +18,7 @@ namespace jl12800
 
     public:
         time_t _ctime;          // 日志产生的时间戳
-        LOGLEVEL::value _level; // 日志等级
+        LOG_LEVEL::value _level; // 日志等级
         size_t _line;           // 行号
         std::thread::id _tid;   // 线程ID
         std::string _file;      // 源码文件名

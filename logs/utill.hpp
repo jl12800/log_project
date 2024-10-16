@@ -44,7 +44,7 @@ namespace jl12800
                 return filepath.substr(0, pos + 1);
             }
 
-            static void creat_directory(const std::string &path)
+            static void create_directory(const std::string &path)
             {
                 size_t pos = 0, idx = 0;
 

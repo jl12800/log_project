@@ -4,8 +4,8 @@
 
 namespace jl12800
 {
-    // 1. LogLevel 类用于定义日志系统的日志等级
-    class LOGLEVEL
+    // 1. Log_Level 类用于定义日志系统的日志等级
+    class LOG_LEVEL
     {
     public:
         // 1.1 枚举类 value 定义了日志等级
@@ -21,20 +21,20 @@ namespace jl12800
         };
 
         // 1.2 将日志等级枚举值转换为对应的字符串表示
-        static const char *tostring(LOGLEVEL::value level) {
+        static const char *tostring(LOG_LEVEL::value level) {
             // 使用 switch 语句匹配不同的日志等级，并返回对应的字符串
             switch (level) {
-                case LOGLEVEL::value::DEBUG:
+                case LOG_LEVEL::value::DEBUG:
                     return "DEBUG"; // 当日志等级为 DEBUG 时返回 "DEBUG"
-                case LOGLEVEL::value::INFO:
+                case LOG_LEVEL::value::INFO:
                     return "INFO"; // 当日志等级为 INFO 时返回 "INFO"
-                case LOGLEVEL::value::WARN:
+                case LOG_LEVEL::value::WARN:
                     return "WARN"; // 当日志等级为 WARN 时返回 "WARN"
-                case LOGLEVEL::value::ERROR:
+                case LOG_LEVEL::value::ERROR:
                     return "ERROR"; // 当日志等级为 ERROR 时返回 "ERROR"
-                case LOGLEVEL::value::FATAL:
+                case LOG_LEVEL::value::FATAL:
                     return "FATAL"; // 当日志等级为 FATAL 时返回 "FATAL"
-                case LOGLEVEL::value::OFF:
+                case LOG_LEVEL::value::OFF:
                     return "OFF"; // 当日志等级为 OFF 时返回 "OFF"
             }
             // 如果没有匹配到任何已知日志等级，返回 "UNKNOW"
