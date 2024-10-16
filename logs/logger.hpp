@@ -270,7 +270,7 @@ namespace jl12800
         template <typename SinkType, typename... Args>
         void buildSink(Args &&...args)
         {
-            LogSink::ptr psink = SinkFactory::create<SinkType>(std::forward<Args>(args)...);
+            LOG_SINK::ptr psink = SINK_FACTORY::create<SinkType>(std::forward<Args>(args)...);
             _sinks.push_back(psink);
         }
         virtual LOGGER::ptr build() = 0;
@@ -317,6 +317,7 @@ namespace jl12800
             static LoggerManager eton;
             return eton;
         }
+
         void addLogger(LOGGER::ptr &logger)
         {
             if (hasLogger(logger->name()))
@@ -324,6 +325,7 @@ namespace jl12800
             std::unique_lock<std::mutex> lock(_mutex);
             _loggers.insert(std::make_pair(logger->name(), logger));
         }
+
         bool hasLogger(const std::string &name)
         {
             std::unique_lock<std::mutex> lock(_mutex);
@@ -334,6 +336,7 @@ namespace jl12800
             }
             return true;
         }
+
         LOGGER::ptr getLogger(const std::string &name)
         {
             std::unique_lock<std::mutex> lock(_mutex);
@@ -344,6 +347,7 @@ namespace jl12800
             }
             return it->second;
         }
+        
         LOGGER::ptr rootLogger()
         {
             return _root_logger;
